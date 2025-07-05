@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AudioSamples</title>
+  <style>
+    table {
+      width: 90%;
+      margin: 1em auto;
+      border-collapse: collapse;
+      text-align: center;
+      table-layout: auto;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      white-space: nowrap;
+    }
+    audio {
+      width: 95%;
+      display: block;
+      margin: 0 auto;
+    }
+    th {
+      background-color: #f0f0f0;
+    }
+    /* Make first two columns fit content */
+    th:first-child,
+    th:nth-child(2),
+    td:first-child,
+    td:nth-child(2) {
+      width: 1%;
+      white-space: nowrap;
+      text-align: center;
+    }
+    /* Make all language columns equal width */
+    .lang-col {
+      width: 25%;
+      min-width: 100px;
+      font-size: 1.2em;
+    }
+    /* Style for the merged "Language" row */
+    .language-header {
+      background-color: #e0e0e0;
+      font-weight: bold;
+      font-size: 1.3em;
+      text-align: center;
+    }
+    .dropdown-container {
+      font-size: 1.4em;
+    }
+    .dropdown-container select {
+      font-size: 1.1em;
+    }
+    .speech-task-main {
+      font-size: 1.3em;
+    }
+    .speech-task-labels {
+      font-size: 1.2em;
+    }
+    .vertical-header {
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      text-align: center;
+      vertical-align: middle;
+      position: relative;
+      border: 0.1px solid #ccc !important;
+      box-sizing: border-box;
+      background-clip: padding-box;
+    }
+    .vertical-header::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border: 1px solid #ccc;
+      pointer-events: none;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+  <h1 style="margin: 0.5em 0 0.2em 0;text-align: center;">Samples of Original and Enhanced Sustained Vowel Utterances for ALS</h1>
+  
+  <div style="text-align: center; color: blue; font-size: large; margin: 1.5em 0 1.5em 0;">*Please <span style="font-weight: bold;">disable Noise Filter of the system</span> to listen to the sustained vowels and fricatives.</div>
+  <table>
+    <colgroup>
+      <col style="width:1%">
+      <col style="width:1%">
+      <col class="lang-col">
+      <col class="lang-col">
+      <col class="lang-col">
+      <col class="lang-col">
+    </colgroup>
+    <thead>
+      <tr>
+        <th rowspan="2" class="speech-task-main">Method</th>
+        <th id="componentHeader" rowspan="2" class="speech-task-main">Component<br>enhanced</th>
+        <th class="language-header" colspan="4">Vowels</th>
+      </tr>
+      <tr>
+        <th class="lang-col">/a/</th>
+        <th class="lang-col">/i/</th>
+        <th class="lang-col">/o/</th>
+        <th class="lang-col">/u/</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Original row -->
+      <tr data-rowname="original">
+        <th class="speech-task-labels">Original</th>
+        <th class="speech-task-labels">-</th>
+        <td><audio controls src="audio/als_original_a.mp3" data-rowname="original" data-vowel="a"></audio></td>
+        <td><audio controls src="audio/als_original_i.mp3" data-rowname="original" data-vowel="i"></audio></td>
+        <td><audio controls src="audio/als_original_o.mp3" data-rowname="original" data-vowel="o"></audio></td>
+        <td><audio controls src="audio/als_original_u.mp3" data-rowname="original" data-vowel="u"></audio></td>
+      </tr>
+      <!-- VSA rows -->
+      <tr data-rowname="vsa_source">
+        <th class="speech-task-labels vertical-header" rowspan="3">Vowel Specific<br>Approach (VSA)</th>
+        <th class="speech-task-labels">Source</th>
+        <td><audio controls src="audio/als_vsa_source_a.mp3" data-rowname="vsa_source" data-vowel="a"></audio></td>
+        <td><audio controls src="audio/als_vsa_source_i.mp3" data-rowname="vsa_source" data-vowel="i"></audio></td>
+        <td><audio controls src="audio/als_vsa_source_o.mp3" data-rowname="vsa_source" data-vowel="o"></audio></td>
+        <td><audio controls src="audio/als_vsa_source_u.mp3" data-rowname="vsa_source" data-vowel="u"></audio></td>
+      </tr>
+      <tr data-rowname="vsa_filter">
+        <th class="speech-task-labels">Filter</th>
+        <td><audio controls src="audio/als_vsa_filter_a.mp3" data-rowname="vsa_filter" data-vowel="a"></audio></td>
+        <td><audio controls src="audio/als_vsa_filter_i.mp3" data-rowname="vsa_filter" data-vowel="i"></audio></td>
+        <td><audio controls src="audio/als_vsa_filter_o.mp3" data-rowname="vsa_filter" data-vowel="o"></audio></td>
+        <td><audio controls src="audio/als_vsa_filter_u.mp3" data-rowname="vsa_filter" data-vowel="u"></audio></td>
+      </tr>
+      <tr data-rowname="vsa_both">
+        <th class="speech-task-labels">Both</th>
+        <td><audio controls src="audio/als_vsa_both_a.mp3" data-rowname="vsa_both" data-vowel="a"></audio></td>
+        <td><audio controls src="audio/als_vsa_both_i.mp3" data-rowname="vsa_both" data-vowel="i"></audio></td>
+        <td><audio controls src="audio/als_vsa_both_o.mp3" data-rowname="vsa_both" data-vowel="o"></audio></td>
+        <td><audio controls src="audio/als_vsa_both_u.mp3" data-rowname="vsa_both" data-vowel="u"></audio></td>
+      </tr>
+      <!-- MVA rows -->
+      <tr data-rowname="mva_source">
+        <th class="speech-task-labels vertical-header" rowspan="3">Multi Vowel<br>Approach (MVA)</th>
+        <th class="speech-task-labels">Source</th>
+        <td><audio controls src="audio/als_mva_source_a.mp3" data-rowname="mva_source" data-vowel="a"></audio></td>
+        <td><audio controls src="audio/als_mva_source_i.mp3" data-rowname="mva_source" data-vowel="i"></audio></td>
+        <td><audio controls src="audio/als_mva_source_o.mp3" data-rowname="mva_source" data-vowel="o"></audio></td>
+        <td><audio controls src="audio/als_mva_source_u.mp3" data-rowname="mva_source" data-vowel="u"></audio></td>
+      </tr>
+      <tr data-rowname="mva_filter">
+        <th class="speech-task-labels">Filter</th>
+        <td><audio controls src="audio/als_mva_filter_a.mp3" data-rowname="mva_filter" data-vowel="a"></audio></td>
+        <td><audio controls src="audio/als_mva_filter_i.mp3" data-rowname="mva_filter" data-vowel="i"></audio></td>
+        <td><audio controls src="audio/als_mva_filter_o.mp3" data-rowname="mva_filter" data-vowel="o"></audio></td>
+        <td><audio controls src="audio/als_mva_filter_u.mp3" data-rowname="mva_filter" data-vowel="u"></audio></td>
+      </tr>
+      <tr data-rowname="mva_both">
+        <th class="speech-task-labels">Both</th>
+        <td><audio controls src="audio/als_mva_both_a.mp3" data-rowname="mva_both" data-vowel="a"></audio></td>
+        <td><audio controls src="audio/als_mva_both_i.mp3" data-rowname="mva_both" data-vowel="i"></audio></td>
+        <td><audio controls src="audio/als_mva_both_o.mp3" data-rowname="mva_both" data-vowel="o"></audio></td>
+        <td><audio controls src="audio/als_mva_both_u.mp3" data-rowname="mva_both" data-vowel="u"></audio></td>
+      </tr>
+      <!-- VITS row -->
+      <tr data-rowname="vits_both">
+        <th class="speech-task-labels">Baseline<br>VITS TTS</th>
+        <th class="speech-task-labels">Both</th>
+        <td><audio controls src="audio/als_vits_both_a.mp3" data-rowname="vits_both" data-vowel="a"></audio></td>
+        <td><audio controls src="audio/als_vits_both_i.mp3" data-rowname="vits_both" data-vowel="i"></audio></td>
+        <td><audio controls src="audio/als_vits_both_o.mp3" data-rowname="vits_both" data-vowel="o"></audio></td>
+        <td><audio controls src="audio/als_vits_both_u.mp3" data-rowname="vits_both" data-vowel="u"></audio></td>
+      </tr>
+    </tbody>
+  </table>
+  
+</body>
+</html>
